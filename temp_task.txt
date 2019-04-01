@@ -1,0 +1,20 @@
+x-completed
+!-postponed
+f-failed
+
+members:
+	Fabian
+	Jaivardhan
+	Navya
+	Sikender
+	Tyler
+	Wahab
+
+status - assigned date - task - assignee 
+--------------------------------------------------
+[ ] - mon-3/31 - intensity slicing - sikender
+[ ] - mon-3/31 - color transformation - navya
+[ ] - mon-3/31 - smoothing filter - wahab
+[ ] - mon-3/31 - sharpening filter - jaivardhan
+[ ] - mon-3/31 - i/o , and starter file - tyler
+[ ] - mon-3/31 - Due: tue-4/2 Project Proposal 
