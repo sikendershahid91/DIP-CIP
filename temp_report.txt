@@ -1,6 +1,0 @@
-project proposal presentation
-
-1. topic and objectives
-2. hand sketches of gui
-3. member resposibilities
-4. implementation and reuse
