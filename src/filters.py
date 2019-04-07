@@ -30,7 +30,10 @@ class Slice:
                                  else Image[r,c]
 
     def constant_slice(self, Image, bounds, Gain ):
+        print(bounds) 
         constant = sum(bounds)/2
+        print(type(Gain))
+        print(type(constant))
         for r in range(0, Image.shape[0] ) :
             for c in range(0, Image.shape[1] ) :
                 Image[r,c] = Gain * constant \
@@ -49,7 +52,7 @@ class Slice:
         self.constant_slice(Image, [ max(bounds) , np.max(Image) ] , Gain )
                 
 if __name__ == '__main__':
-
+## TESTS 
     import numpy as np
     aImage = np.array([
         [1, 2, 3],
@@ -69,3 +72,14 @@ if __name__ == '__main__':
     print(aImage)
     Slice().inverted_constant_slice( aImage, [3 , 5 ], 0.5 )
     print(aImage) 
+
+    aImage = np.array([
+        [1, 2, 3],
+        [3, 2, 1],
+        [3, 4, 2]])
+
+    while True:
+        gain = input('what gain: ' )
+        a, b = input('what bounds ' ).split() 
+        Slice().constant_slice( aImage, [float(a) , float(b)], float(gain) )
+        print(aImage) 
