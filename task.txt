@@ -18,3 +18,5 @@ status - assigned date - task - assignee
 [ ] - mon-3/31 - sharpening filter - jaivardhan
 [ ] - mon-3/31 - i/o , and starter file - tyler
 [x] - mon-3/31 - Due: tue-4/2 Project Proposal 
+[ ] - sat-4/06 - intensity slicing - handle floating point
+[ ] - sat-4/06 - intensity slicing - handle saturation

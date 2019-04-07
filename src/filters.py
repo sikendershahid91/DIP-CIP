@@ -22,7 +22,6 @@ class Slice:
     def linear_slice(self, Image , bounds, Gain ) :
         print(type(Image) , Image.dtype)
         print(Image.shape)
-        
         for r in range(0, Image.shape[0] ) :
             for c in range(0, Image.shape[1] ) :
                 Image[r, c] = Gain * Image[r, c] \
