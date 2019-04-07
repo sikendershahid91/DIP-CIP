@@ -5,6 +5,7 @@
 #
 
 import numpy as np 
+import cv2
 
 class Sharpen:
     def __init__(self):
@@ -78,8 +79,17 @@ if __name__ == '__main__':
         [3, 2, 1],
         [3, 4, 2]])
 
+    import  matplotlib.pyplot as plt
+    input_image = cv2.imread("images/Lenna.png", 0)
+    
     while True:
+        print( np.min(input_image), np.max(input_image) )
+        plt.imshow(input_image)
+        plt.show()
         gain = input('what gain: ' )
         a, b = input('what bounds ' ).split() 
-        Slice().constant_slice( aImage, [float(a) , float(b)], float(gain) )
-        print(aImage) 
+        Slice().constant_slice( input_image, [float(a) , float(b)], float(gain) )
+        plt.imshow(input_image)
+        plt.show()
+        cv2.waitKey(0) 
+
