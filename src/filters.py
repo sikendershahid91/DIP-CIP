@@ -20,35 +20,39 @@ class Slice:
         print('starting slicing')
         pass
 
-    def linear_slice(self, Image , bounds, Gain ) :
-        print(type(Image) , Image.dtype)
-        print(Image.shape)
-        for r in range(0, Image.shape[0] ) :
-            for c in range(0, Image.shape[1] ) :
-                Image[r, c] = Gain * Image[r, c] \
-                              if Image[r,c] >= min(bounds) and \
-                                 Image[r,c] <= max(bounds) \
-                                 else Image[r,c]
+    def linear_slice(self, image, bounds, gain):
+        print(type(image), image.dtype, image.shape)
+        print("Slicing Range: ", bounds, "Gain = ", gain)
 
-    def constant_slice(self, Image, bounds, Gain ):
+        for r in range(0, image.shape[0]):
+            for c in range(0, image.shape[1]):
+                image[r, c] = gain * image[r, c] \
+                              if image[r,c] >= min(bounds) and \
+                                 image[r,c] <= max(bounds) \
+                                 else image[r, c]
+
+        return image
+
+    def constant_slice(self, image, bounds, gain):
         print(bounds) 
         constant = sum(bounds)/2
-        print(type(Gain))
+        print(type(gain))
         print(type(constant))
-        for r in range(0, Image.shape[0] ) :
-            for c in range(0, Image.shape[1] ) :
-                Image[r,c] = Gain * constant \
-                             if Image[r,c] >= min(bounds) and \
-                                Image[r,c] <= max(bounds) \
-                                else Image[r,c] 
+        for r in range(0, image.shape[0] ) :
+            for c in range(0, image.shape[1] ) :
+                image[r,c] = gain * constant \
+                             if image[r,c] >= min(bounds) and \
+                                image[r,c] <= max(bounds) \
+                                else image[r,c]
+        return image
 
-                
-    def inverted_linear_slice(self, Image, bounds, Gain): 
-        self.linear_slice(Image, [ np.min(Image), min(bounds)  ] , Gain )
-        self.linear_slice(Image, [ max(bounds) , np.max(Image) ] , Gain )
+    def inverted_linear_slice(self, image, bounds, gain):
+        output = self.linear_slice(image, [np.min(image), min(bounds)], gain)
+        output = self.linear_slice(output, [max(bounds), np.max(image)], gain)
+        return output
 
-
-    def inverted_constant_slice(self, Image, bounds, Gain):
-        self.constant_slice(Image, [ np.min(Image), min(bounds)  ] , Gain )
-        self.constant_slice(Image, [ max(bounds) , np.max(Image) ] , Gain )
+    def inverted_constant_slice(self, image, bounds, gain):
+        output = self.constant_slice(image, [np.min(image), min(bounds)], gain)
+        output = self.constant_slice(output, [max(bounds), np.max(image)], gain)
+        return output
 
