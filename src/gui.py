@@ -17,7 +17,8 @@ class GUI:
         self.window.resizable(0, 0)
         self.window.title("Color Image Processing by Team 9")
 
-        loadimg_button = tk.Button(text="Load image").place(x=20, y=20)
+        loadimg_button = tk.Button(text="Load image")
+        loadimg_button.place(x=20, y=20)
 
         # Create main frame with tabs ("Notebook")
         note = ttk.Notebook(self.window)
@@ -49,7 +50,7 @@ class GUI:
 
         tk.Frame(lf, height=2, width=170, bd=1, relief="sunken").place(x=10, y=80)
 
-    def create_intensityslicing_tab(selfself, tab):
+    def create_intensityslicing_tab(self, tab):
         # Tab 2 contents - Intensity slicing
         lf = ttk.Labelframe(tab, text='Select methods', height=350, width=200)
         lf.place(x=20, y=20)
@@ -117,7 +118,7 @@ class GUI:
         tk.Radiobutton(lf, text="Difference", variable=sharpening, value=3).place(x=10, y=70)
         tk.Frame(lf, height=2, width=170, bd=1, relief="sunken").place(x=10, y=110)
 
-    def create_smoothing_tab(selfself, tab):
+    def create_smoothing_tab(self, tab):
         # Tab 3 contents - Smoothing
         lf = ttk.Labelframe(tab, text='Select methods', height=370, width=200)
         lf.place(x=20, y=20)
