@@ -13,7 +13,12 @@ def selectImage():
 
 def cv2ToPIL(cv2Image):#Converts a cv2 np.array into PIL format
     image = cv2.cvtColor(cv2Image, cv2.COLOR_BGR2RGB) #CV2 uses BGR format instead of RGB so you have to put them in the write order
-    return(Image.fromarray(image)) 
+    return(Image.fromarray(image))
+
+def PILToCv2(pilImage):#Converts a PIL into cv2 np array
+    image = np.array(pilImage)
+    return cv2.cvtColor(image, cv2.COLOR_RGB2BGR) 
+     
 
 def saveImage(image):
     if type(image) is np.ndarray:   #checks to see if the image is an np array
