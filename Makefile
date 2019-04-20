@@ -1,7 +1,11 @@
 
 all:
 	@echo "Usage:"
-	@echo "\tmake clean"
+	@echo "\tmake project " 
+	@echo "\tmake clean   " 
+
+project:
+	python3 src/main.py 
 
 filter:
 	python3 src/filters.py
