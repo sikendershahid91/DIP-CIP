@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import sys
-sys.path.insert(0,'src/')
+sys.path.append('../src/')
 
-from src.filters import Slice
+from filters import Slice
 
 import numpy as np
 import cv2
@@ -74,18 +74,18 @@ if __name__ == '__main__':
         print(output_image)
         print(inverted_constant_sliced_image)
 
-    # import matplotlib.pyplot as plt
-    # input_image = cv2.imread("images/Lenna.png", 0)
-    # print(input_image.shape)
-    # print(np.min(input_image), np.max(input_image))
-    # while True:
-    #     print(np.min(input_image), np.max(input_image))
-    #     plt.imshow(input_image)
-    #     plt.show()
-    #     gain = input('what gain: ')
-    #     a, b = input('what bounds ').split()
-    #     Slice().constant_slice( input_image, [float(a), float(b)], float(gain))
-    #     plt.imshow(input_image)
-    #     plt.show()
-    #     cv2.waitKey(0)
+    import matplotlib.pyplot as plt
+    input_image = cv2.imread("../images/Lenna.png", 0)
+    print(input_image.shape)
+    print(np.min(input_image), np.max(input_image))
+    while True:
+        print(np.min(input_image), np.max(input_image))
+        plt.imshow(input_image)
+        plt.show()
+        gain = input('what gain: ')
+        a, b = input('what bounds ').split()
+        Slice().constant_slice( input_image, [float(a), float(b)], float(gain))
+        plt.imshow(input_image)
+        plt.show()
+        cv2.waitKey(0)
 
