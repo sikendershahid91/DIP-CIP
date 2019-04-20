@@ -22,5 +22,5 @@ status - assigned date - task - assignee
 [ ] - sat-4/06 - intensity slicing - handle floating point
 [ ] - sat-4/06 - intensity slicing - handle saturation
 [ ] - sat-4/06 - intensity slicing - hangle varying resolution
-[ ] - sat-4/20 - backend - get location
-[ ] - sat-4/20 - backend - display images
+[x] - sat-4/20 - backend - get location
+[ ] - sat-4/20 - gui - display images
