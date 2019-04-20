@@ -13,12 +13,14 @@ members:
 status - assigned date - task - assignee 
 --------------------------------------------------
 [x] - mon-3/31 - intensity slicing - sikender & israel 
-[ ] - mon-3/31 - color transformation - navya
+[x] - mon-3/31 - color transformation - navya
 [ ] - mon-3/31 - smoothing filter - wahab
 [ ] - mon-3/31 - sharpening filter - jaivardhan
-[ ] - mon-3/31 - i/o , and starter file - tyler
+[x] - mon-3/31 - i/o , and starter file - tyler
 [x] - mon-3/31 - Due: tue-4/2 Project Proposal
-[ ] - sat-4/06 - gui - fabian mendez
+[x] - sat-4/06 - gui - fabian mendez
 [ ] - sat-4/06 - intensity slicing - handle floating point
 [ ] - sat-4/06 - intensity slicing - handle saturation
 [ ] - sat-4/06 - intensity slicing - hangle varying resolution
+[ ] - sat-4/20 - backend - get location
+[ ] - sat-4/20 - backend - display images
