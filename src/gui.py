@@ -4,10 +4,16 @@
 
 import tkinter as tk
 from tkinter import ttk
+import imageSelector
+import filters
+import color_model
+import cip
+from PIL import Image, ImageTk
+import cv2
 
 class GUI:
-
     def __init__(self):
+        self.imageController = imageSelector.image_selector
         self.window = tk.Tk()
         self.create_widgets()
 
@@ -17,7 +23,8 @@ class GUI:
         self.window.resizable(0, 0)
         self.window.title("Color Image Processing by Team 9")
 
-        loadimg_button = tk.Button(text="Load image")
+
+        loadimg_button = tk.Button(text="Load image", command=self.imageController.selectImage)
         loadimg_button.place(x=20, y=20)
 
         # Create main frame with tabs ("Notebook")
@@ -33,11 +40,20 @@ class GUI:
         note.add(tab4, text="Sharpening")
 
         note.place(x=20, y=70)
-
+        
+        
         self.create_CIT_tab(tab1)
         self.create_intensityslicing_tab(tab2)
         self.create_smoothing_tab(tab3)
         self.create_sharpening_tab(tab4)
+        
+
+    def create_image_display(self):
+        #.resize((350, 750), Image.ANTIALIAS)
+        img = self.imageController.prepForDisplay()
+        panel = tk.Label(self.window, text ="image",image=img, height = 385, width = 660)
+        panel.image=img
+        panel.place(x = 300, y = 100)
 
     def create_CIT_tab(self, tab):
         # Tab 1 contents - Color Image Transformation
@@ -145,5 +161,5 @@ class GUI:
 
 
 app = GUI()
-app.window.mainloop()
+#app.window.mainloop()
 
