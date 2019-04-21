@@ -5,13 +5,14 @@ import cv2
 # reading an image
 image = cv2.imread("sky.png")
 [rows, cols, dim] = np.shape(image)
+image1 = np.float32(image)/255
 cmyk = np.zeros((rows, cols, 4), dtype="uint8")
 for i in range(rows):
     for j in range(cols):
         # dividing by 255
-        blue = image[i, j, 0] / 255
-        green = image[i, j, 1] / 255
-        red = image[i, j, 2] / 255
+        blue = image1[i, j, 0]
+        green = image1[i, j, 1]
+        red = image1[i, j, 2]
         # getting cmy components
         c = 1 - red
         m = 1 - green
