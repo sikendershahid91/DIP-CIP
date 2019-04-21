@@ -86,6 +86,7 @@ if __name__ == '__main__':
         a, b = input('what bounds ').split()
         Slice().constant_slice( input_image, [float(a), float(b)], float(gain))
         plt.imshow(input_image)
+        plt.xticks([]), plt.yticks([])
         plt.show()
         cv2.waitKey(0)
 

@@ -3,6 +3,8 @@
 #
 # package contains sharpening, smoothing, slicing filters. 
 #
+# assumptions : dtype - uint8
+
 
 import numpy as np 
 import cv2
@@ -26,11 +28,18 @@ class Slice:
 
         for r in range(0, image.shape[0]):
             for c in range(0, image.shape[1]):
-                image[r, c] = gain * image[r, c] \
+                temp_value = gain * image[r, c] \
                               if image[r,c] >= min(bounds) and \
                                  image[r,c] <= max(bounds) \
                                  else image[r, c]
-
+                
+                if temp_value > np.iinfo(image.dtype).max:
+                    image[r, c] = np.iinfo(image.dtype).max
+                elif temp_value < np.iinfo(image.dtype).min:
+                    image[r, c] = np.iinfo(image.dtype).min
+                else:
+                    image[r, c] = temp_value
+                    
         return image
 
     def constant_slice(self, image, bounds, gain):
@@ -40,10 +49,18 @@ class Slice:
         print(type(constant))
         for r in range(0, image.shape[0] ) :
             for c in range(0, image.shape[1] ) :
-                image[r,c] = gain * constant \
+                temp_value = gain * constant \
                              if image[r,c] >= min(bounds) and \
                                 image[r,c] <= max(bounds) \
                                 else image[r,c]
+                
+                if temp_value > np.iinfo(image.dtype).max:
+                    image[r, c] = np.iinfo(image.dtype).max
+                elif temp_value < np.iinfo(image.dtype).min:
+                    image[r, c] = np.iinfo(image.dtype).min
+                else:
+                    image[r, c] = temp_value 
+                
         return image
 
     def inverted_linear_slice(self, image, bounds, gain):
