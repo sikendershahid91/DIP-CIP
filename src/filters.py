@@ -3,7 +3,8 @@
 #
 # package contains sharpening, smoothing, slicing filters. 
 #
-# assumptions : dtype - uint8
+# assumptions : dtype - is not floating point
+# 
 
 
 import numpy as np 
