@@ -1,6 +1,7 @@
 x-completed
 !-postponed
 f-failed
+/-no longer needed
 
 members:
 	Fabian
@@ -14,13 +15,13 @@ status - assigned date - task - assignee
 --------------------------------------------------
 [x] - mon-3/31 - intensity slicing - sikender & israel 
 [x] - mon-3/31 - color transformation - navya
-[ ] - mon-3/31 - smoothing filter - wahab
-[ ] - mon-3/31 - sharpening filter - jaivardhan
+[x] - mon-3/31 - smoothing filter - wahab
+[x] - mon-3/31 - sharpening filter - jaivardhan
 [x] - mon-3/31 - i/o , and starter file - tyler
 [x] - mon-3/31 - Due: tue-4/2 Project Proposal
 [x] - sat-4/06 - gui - fabian mendez
-[ ] - sat-4/06 - intensity slicing - handle floating point
+[/] - sat-4/06 - intensity slicing - handle float32
 [x] - sat-4/06 - intensity slicing - handle saturation
 [x] - sat-4/06 - intensity slicing - hangle varying resolution
 [x] - sat-4/20 - backend - get location
-[ ] - sat-4/20 - gui - display images
+[x] - sat-4/20 - gui - display images
