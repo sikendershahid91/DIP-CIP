@@ -9,7 +9,7 @@ project:
 	python3 src/main.py 
 
 filter:
-	python3 test/slicing_test.py
+	cd test && python3 slicing_test.py
 
 clean:
 	@echo "Cleaning project"
