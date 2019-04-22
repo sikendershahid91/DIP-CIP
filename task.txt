@@ -25,3 +25,8 @@ status - assigned date - task - assignee
 [x] - sat-4/06 - intensity slicing - hangle varying resolution
 [x] - sat-4/20 - backend - get location
 [x] - sat-4/20 - gui - display images
+[ ] - sun-4/21 - final project presentation
+[x] - sun-4/21 - proposal presentation
+[ ] - sun-4/21 - complete report
+[ ] - sun-4/21 - README instruction
+
