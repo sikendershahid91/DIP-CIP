@@ -1,10 +1,15 @@
 
 all:
 	@echo "Usage:"
-	@echo "\tmake clean"
+	@echo "\tmake project " 
+	@echo "\tmake clean   "
+	@echo "\tmake filter : test"
+
+project:
+	python3 src/main.py 
 
 filter:
-	python3 src/filters.py
+	python3 test/slicing_test.py
 
 clean:
 	@echo "Cleaning project"
