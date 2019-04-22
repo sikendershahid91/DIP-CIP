@@ -8,15 +8,6 @@
 
 
 import numpy as np 
-import cv2
-
-class Sharpen:
-    def __init__(self):
-        pass
-
-class Smooth:
-    def __init__(self):
-        pass
 
 class Slice:
     def __init__(self):
